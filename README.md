@@ -141,5 +141,5 @@ npm run lint:fix
 Desarrollado por **DrawingTheCode**.
 
 ## Licencia
-Este proyecto está bajo la licencia ISC.
+Este proyecto está bajo la licencia Apache License 2.0.
 

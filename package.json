@@ -4,7 +4,7 @@
   "main": "index.js",
   "version": "1.0.0",
   "author": "DrawingTheCode <dc@drawingthecode.com> (https://drawingthecode.com)",
-  "license": "ISC",
+  "license": "Apache License 2.0",
   "keywords": [
     "login",
     "jwt",
