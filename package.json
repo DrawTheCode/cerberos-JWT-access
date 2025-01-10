@@ -1,0 +1,43 @@
+{
+  "name": "cerberos-jwt-login",
+  "description": "Microservice for login with JWT.",
+  "main": "index.js",
+  "version": "1.0.0",
+  "author": "DrawingTheCode <dc@drawingthecode.com> (https://drawingthecode.com)",
+  "license": "ISC",
+  "keywords": [
+    "login",
+    "jwt",
+    "passport",
+    "micro-service"
+  ],"repository": { 
+    "type": "git", 
+    "url": "https://github.com/DrawTheCode/cerberos-JWT-access" 
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint .--config eslint.config.js",
+    "lint:fix": "eslint . --config eslint.config.js --fix",
+    "build": "tsc",
+    "docker": "docker compose up cerberos-node-prod",
+    "docker:init": "npm run docker:build && npm run docker",
+    "docker:build": "docker compose --progress plain build cerberos-node-prod",
+    "docker:dev": "docker compose up cerberos-node-dev",
+    "docker:dev:build": "docker compose --progress tty build cerberos-node-dev",
+    "docker:dev:init": "npm run docker:dev:build && npm run docker:dev",
+    "start": "node dist/main.js",
+    "start:dev": "nodemon"
+  },
+  "devDependencies": {
+    "@eslint/js": "9.17.0",
+    "@types/express": "5.0.0",
+    "eslint": "9.17.0",
+    "nodemon": "3.1.9",
+    "ts-node": "10.9.2",
+    "typescript": "5.7.2",
+    "typescript-eslint": "8.19.0"
+  },
+  "dependencies": {
+    "express": "4.21.2"
+  }
+}

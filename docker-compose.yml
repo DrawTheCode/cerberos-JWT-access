@@ -1,0 +1,39 @@
+services:
+  cerberos-node-prod:
+    image: node:22.12.0-alpine
+    container_name: cerberos-node-prod
+    build: 
+      context: .
+      target: production
+      args:
+        PORT: ${PORT}
+        RMT_DIR: ${RMT_DIR}
+    environment:
+      - PORT=${PORT}
+    ports:
+      - "${PORT}:${PORT}"
+
+  cerberos-node-dev:
+    image: node:22.12.0-alpine
+    container_name: cerberos-node-dev
+    tty: true
+    env_file:
+      - .env
+    build: 
+      context: .
+      target: developer
+      args:
+        PORT: ${PORT}
+        RMT_DIR: ${RMT_DIR}
+    environment:
+      - PORT=${PORT}
+      - RMT_DIR=${RMT_DIR}
+    ports:
+      - "${PORT}:${PORT}"
+    volumes:
+      - .:/home/cerbero
+      - ./node_modules:/home/cerbero/node_modules
+
+volumes:
+  node_modules:
+    name: node_modules_cerberos-api
