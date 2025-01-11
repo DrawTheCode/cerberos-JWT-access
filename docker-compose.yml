@@ -2,6 +2,7 @@ services:
   cerberos-node-prod:
     image: node:22.12.0-alpine
     container_name: cerberos-node-prod
+    restart: on-failure:5
     build: 
       context: .
       target: production
