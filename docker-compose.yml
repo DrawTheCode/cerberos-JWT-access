@@ -17,8 +17,6 @@ services:
     image: node:22.12.0-alpine
     container_name: cerberos-node-dev
     tty: true
-    env_file:
-      - .env
     build: 
       context: .
       target: developer
